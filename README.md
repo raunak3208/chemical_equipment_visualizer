@@ -1,93 +1,188 @@
-# Chemical Equipment Parameter Visualizer
+Chemical Equipment Parameter Visualizer
 
-A comprehensive hybrid application for monitoring and visualizing chemical equipment parameters with both web and desktop interfaces.
+Hybrid Application (Web + Desktop + Django API)
 
-## Quick Start
+This project is a hybrid visualization system that includes:
 
-### Prerequisites
-- Python 3.8+
-- Node.js 14+
-- Git
+Django REST API Backend
 
-### Fast Setup (3 commands)
+React Web Frontend
 
-1. **Backend** (Terminal 1)
-\`\`\`bash
+PyQt5 Desktop Application
+
+CSV Upload & Analytics (Flowrate, Pressure, Temperature)
+
+Charts (Chart.js & Matplotlib)
+
+History of last 5 uploads
+
+PDF Report Generation
+
+📂 Project Structure
+chemical_equipment/
+│
+├── backend/                # Django REST API
+│   ├── equipment_api/
+│   ├── config/
+│   ├── uploads/
+│   ├── manage.py
+│   └── requirements.txt
+│
+├── frontend-web/           # React Web App (Vite)
+│   ├── src/
+│   ├── index.html
+│   ├── package.json
+│
+├── frontend-desktop/       # PyQt5 Desktop App
+│   ├── main.py
+│   ├── requirements.txt
+│
+└── README.md               # Documentation
+
+🛠️ Requirements
+Backend
+
+Python 3.11
+
+pip / venv
+
+SQLite (default)
+
+Frontend Web
+
+Node 20 (recommended)
+
+npm
+
+Desktop
+
+Python 3.11
+
+PyQt5
+
+⚙️ 1. Backend Setup (Django API)
+📌 Step 1 — Navigate to Backend
 cd backend
-python -m venv venv && source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install -r requirements.txt && python manage.py migrate && python manage.py createsuperuser && python manage.py runserver
-\`\`\`
 
-2. **Web Frontend** (Terminal 2)
-\`\`\`bash
+📌 Step 2 — Create Virtual Environment
+python3.11 -m venv venv
+source venv/bin/activate     # macOS/Linux
+venv\Scripts\activate        # Windows
+
+📌 Step 3 — Install Dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+
+📌 Step 4 — Run Migrations
+python manage.py makemigrations
+python manage.py migrate
+
+🆕 STEP 5 — Initialize Database Using init_db (Admin Auto-Setup)
+
+This project includes a custom Django management command that:
+
+✔ Runs migrations
+✔ Creates an admin user
+✔ Sets up the uploads directory
+
+Run:
+
+python manage.py init_db
+
+
+You should see:
+
+[1/3] Running migrations...
+✓ Migrations completed
+[2/3] Creating admin user...
+✓ Admin user created: admin
+[3/3] Setting up directories...
+✓ Uploads directory ready
+
+============================================================
+Database initialization completed successfully!
+============================================================
+Admin credentials:
+  Username: admin
+  Email: admin@example.com
+
+Next: python manage.py runserver
+============================================================
+
+📌 Step 6 — Start Backend Server
+python manage.py runserver
+
+
+Backend is available at:
+
+API Root → http://127.0.0.1:8000/api/
+
+Admin Panel → http://127.0.0.1:8000/admin/
+
+🌐 2. Frontend Web Setup (React + Vite)
+📌 Step 1 — Navigate to Folder
 cd frontend-web
-npm install && npm run dev
-\`\`\`
 
-3. **Desktop App** (Terminal 3)
-\`\`\`bash
+📌 Step 2 — Install Dependencies
+npm install
+
+📌 Step 3 — Start Dev Server
+npm run dev
+
+
+Your web app runs here:
+
+👉 http://localhost:5173/
+
+🖥 3. Desktop App Setup (PyQt5 + Matplotlib)
+📌 Step 1 — Navigate
 cd frontend-desktop
-python -m venv venv && source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install -r requirements.txt && python main.py
-\`\`\`
 
-## Access Points
+📌 Step 2 — Create Virtual Environment
+python3.11 -m venv venv
+source venv/bin/activate
 
-- **Web App:** http://localhost:5173
-- **Backend:** http://localhost:8000
-- **Admin Panel:** http://localhost:8000/admin
+📌 Step 3 — Install Requirements
+pip install -r requirements.txt
 
-## Key Features
+📌 Step 4 — Run App
+python main.py
 
-✓ User authentication and authorization
-✓ CSV file upload and processing
-✓ Real-time data analytics
-✓ Interactive charts and visualizations
-✓ Equipment data management
-✓ PDF report generation
-✓ Upload history tracking
-✓ Responsive web and desktop UIs
+📊 Features
+✔ CSV Upload
 
-## Architecture
+Supports columns:
 
-\`\`\`
-User Interface Layer
-├── React Web Frontend (Chart.js, Recharts)
-└── PyQt5 Desktop App (Matplotlib)
+Equipment Name
 
-API Layer
-└── Django REST Framework APIs
+Type
 
-Data Layer
-└── SQLite Database + Pandas Processing
-\`\`\`
+Flowrate
 
-## Sample Data
+Pressure
 
-A sample CSV file is included at \`data/sample_equipment_data.csv\` for testing.
+Temperature
 
-Format:
-\`\`\`
-Equipment Name,Type,Flowrate,Pressure,Temperature
-Pump-A-001,Centrifugal Pump,1200.5,45.2,65.8
-\`\`\`
+✔ Summary Analytics
 
-## Complete Setup Guide
+Backend computes:
 
-For detailed step-by-step instructions, see [SETUP_GUIDE.md](./SETUP_GUIDE.md)
+Equipment count
 
-## File Structure
+Average flowrate, pressure, temperature
 
-See [PROJECT_DOCUMENTATION.md](./PROJECT_DOCUMENTATION.md) for complete project structure and technical details.
+Type distribution
 
-## Technologies
+✔ Visualization
 
-- **Backend:** Django, Django REST Framework, Pandas, SQLite
-- **Web:** React, Vite, Recharts, Tailwind CSS
-- **Desktop:** PyQt5, Matplotlib
-- **PDF:** ReportLab
+React → Chart.js
 
-## License
+PyQt5 → Matplotlib
 
-MIT License - See LICENSE file for details
-\`\`\`
+✔ Storage
+
+Saves last 5 datasets
+
+✔ PDF Reports
+
+Auto-generated from backend
