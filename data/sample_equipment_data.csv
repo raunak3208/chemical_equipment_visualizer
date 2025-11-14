@@ -1,0 +1,16 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Pump-A-001,Centrifugal Pump,1200.5,45.2,65.8
+Heat Exchanger-HX-01,Heat Exchanger,850.3,32.1,72.3
+Compressor-C-001,Rotary Compressor,2100.0,78.5,55.2
+Filter-F-001,Particulate Filter,500.0,5.2,45.0
+Reactor-R-001,Batch Reactor,450.5,88.3,95.5
+Distillation Column-DC-01,Distillation Column,1500.0,12.5,105.0
+Heat Exchanger-HX-02,Heat Exchanger,920.0,28.0,68.5
+Pump-A-002,Centrifugal Pump,1350.2,50.0,62.0
+Compressor-C-002,Rotary Compressor,1950.0,72.0,58.0
+Filter-F-002,Bag Filter,650.0,8.5,48.0
+Crystallizer-CRY-01,Crystallizer,380.0,15.0,25.0
+Scrubber-S-001,Wet Scrubber,1100.0,22.0,80.0
+Pump-A-003,Gear Pump,850.0,95.0,70.0
+Separator-SEP-01,Centrifuge,300.0,5.5,35.0
+Reactor-R-002,Continuous Reactor,550.0,65.0,120.0

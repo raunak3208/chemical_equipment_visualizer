@@ -1,0 +1,50 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Django uploads
+backend/uploads/
+
+# SQLite DB
+backend/db.sqlite3
+
+# React
+frontend-web/node_modules/
+frontend-web/dist/
+
+# Desktop venv
+frontend-desktop/venv/
+
+# macOS cache
+.DS_Store
+
+# Logs
+*.log
+
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
