@@ -124,13 +124,16 @@ Admin Panel → http://127.0.0.1:8000/admin/
 
 🌐 2. Frontend Web Setup (React + Vite)
 📌 Step 1 — Navigate to Folder
-cd frontend-web
+
+-> cd frontend-web
 
 📌 Step 2 — Install Dependencies
-npm install
+
+-> npm install
 
 📌 Step 3 — Start Dev Server
-npm run dev
+
+-> npm run dev
 
 
 Your web app runs here:
