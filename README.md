@@ -70,12 +70,15 @@ source venv/bin/activate     # macOS/Linux
 venv\Scripts\activate        # Windows
 
 📌 Step 3 — Install Dependencies
-pip install --upgrade pip
-pip install -r requirements.txt
+1) pip install --upgrade pip
+   
+2) pip install -r requirements.txt
 
 📌 Step 4 — Run Migrations
-python manage.py makemigrations
-python manage.py migrate
+
+1) python manage.py makemigrations
+   
+2) python manage.py migrate
 
 🆕 STEP 5 — Initialize Database Using init_db (Admin Auto-Setup)
 
